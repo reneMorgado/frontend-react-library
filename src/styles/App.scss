@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+.Catalog{
+  overflow-x: auto;
+  &-Title{
+    padding: 20px;
+    text-align: center;
+  }
+  &-Subtitle{
+    padding-top: 30px;
+  }
+}
+
+.BookCard{
+  margin: 20px;
+  min-width: 260px;
+  max-width: 260px;
+  &-Carac{
+    display: flex;
+    align-items: center;
+  }
+}
+
+.RentCard{
+  max-width: 300px;
+  margin: 20px;
+}
+
+.UserCard{
+  min-width: 350px;
+  margin: 20px;
+}
+
+.BookAdminCard{
+  margin: 10px;
+  min-width: 260px;
+  max-width: 260px;
+  &-Notification{
+    padding: 8px
+  }
+}
+
