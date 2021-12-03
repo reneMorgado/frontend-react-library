@@ -1,11 +1,18 @@
 import React, { useContext } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
+import { useState } from 'react/cjs/react.development'
 import { userContext } from '../context/userContext'
 
 const Navbar = () => {
 
     const { isAuth, isAdmin, setIsAuth, setIsAdmin, setToken, setUserId } = useContext(userContext)
     const history = useHistory()
+
+    const [mobile, setMobile] = useState(false)
+
+    const _toggleMobileMenu = () => {
+        setMobile(!mobile)
+    }
 
     const _closeSession = () => {
         setIsAdmin(false)
@@ -28,13 +35,13 @@ const Navbar = () => {
                             <NavLink to="/" className="navbar-item">
                                 <h3 className="title is-3">Libreria</h3>
                             </NavLink>
-                            <span className="navbar-burger" data-target="navbarMenuHeroA">
+                            <span className={`navbar-burger ${mobile && 'is-active'}`} data-target="navbarMenuHeroA" onClick={_toggleMobileMenu}>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </span>
                         </div>
-                        <div id="navbarMenuHeroA" className="navbar-menu">
+                        <div id="navbarMenuHeroA" className={`navbar-menu ${mobile && 'is-active'}`}>
                             {isAuth ?
                                 <div className="navbar-end">
                                     <NavLink to="/getBooks" className="navbar-item" activeClassName="is-active">
