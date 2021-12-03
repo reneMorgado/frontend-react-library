@@ -438,7 +438,7 @@ const AllBooks = () => {
                                             <div className="select">
                                                 <select onChange={_selectAuthorHandler}>
                                                     <option value={''}>Selecciona una opción</option>
-                                                    {authors.map((au) => (<option key={Math.random()} selected={au.Id_Autor === author} value={au.Id_Autor}>{au.Nombre_Autor + ' ' + au.Apellido_Autor}</option>))}
+                                                    {authors.map((au,index) => (<option key={index} selected={au.Id_Autor === author} value={au.Id_Autor}>{au.Nombre_Autor + ' ' + au.Apellido_Autor}</option>))}
                                                 </select>
                                             </div>
                                             <div className="icon is-small is-left">
@@ -463,7 +463,7 @@ const AllBooks = () => {
                                             <div className="select">
                                                 <select onChange={_selectGenderHandler}>
                                                     <option value={''}>Selecciona una opción</option>
-                                                    {genders.map((ge) => (<option key={Math.random()} selected={ge.Id_Genero === gender} value={ge.Id_Genero}>{ge.Genero}</option>))}
+                                                    {genders.map((ge,index) => (<option key={index*2} selected={ge.Id_Genero === gender} value={ge.Id_Genero}>{ge.Genero}</option>))}
                                                 </select>
                                             </div>
                                             <div className="icon is-small is-left">
@@ -487,7 +487,7 @@ const AllBooks = () => {
                                             <div className="select">
                                                 <select onChange={_selectEditorialHandler}>
                                                     <option value={''}>Selecciona una opción</option>
-                                                    {editorials.map((ed) => (<option key={Math.random()} selected={ed.Id_Editorial === editorial} value={ed.Id_Editorial}>{ed.Editorial}</option>))}
+                                                    {editorials.map((ed,index) => (<option key={index*10} selected={ed.Id_Editorial === editorial} value={ed.Id_Editorial}>{ed.Editorial}</option>))}
                                                 </select>
                                             </div>
                                             <div className="icon is-small is-left">
@@ -511,7 +511,7 @@ const AllBooks = () => {
                                             <div className="select">
                                                 <select onChange={_selectLanguageHandler}>
                                                     <option value={''}>Selecciona una opción</option>
-                                                    {languages.map((la) => (<option key={Math.random()} selected={la.Id_Idioma === language} value={la.Id_Idioma}>{la.Idioma}</option>))}
+                                                    {languages.map((la,index) => (<option key={index*100} selected={la.Id_Idioma === language} value={la.Id_Idioma}>{la.Idioma}</option>))}
                                                 </select>
                                             </div>
                                             <div className="icon is-small is-left">
