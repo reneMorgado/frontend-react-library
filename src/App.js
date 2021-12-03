@@ -24,6 +24,9 @@ function App() {
       <Router>
         <Navbar/>
         <Routes>
+        <Route exact path="/" >
+            <h1>Bienvenido</h1>
+          </Route>
           <Route exact path="/login" >
             <Login/>
           </Route>
