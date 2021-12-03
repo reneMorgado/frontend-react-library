@@ -15,6 +15,7 @@ const Navbar = () => {
     }
 
     const _closeSession = () => {
+        _toggleMobileMenu()
         setIsAdmin(false)
         setIsAuth(false)
         setToken('')
@@ -44,33 +45,33 @@ const Navbar = () => {
                         <div id="navbarMenuHeroA" className={`navbar-menu ${mobile && 'is-active'}`}>
                             {isAuth ?
                                 <div className="navbar-end">
-                                    <NavLink to="/getBooks" className="navbar-item" activeClassName="is-active">
+                                    <NavLink to="/getBooks" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                         Catalogo de libros
                                     </NavLink>
-                                    <NavLink to="/getRents" className="navbar-item" activeClassName="is-active">
+                                    <NavLink to="/getRents" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                         Mis Rentas
                                     </NavLink>
                                     {isAdmin &&
                                         <React.Fragment>
-                                            <NavLink to="/getAllRents" className="navbar-item" activeClassName="is-active">
+                                            <NavLink to="/getAllRents" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                                 Rentas
                                             </NavLink>
-                                            <NavLink to="/getAllBooks" className="navbar-item" activeClassName="is-active">
+                                            <NavLink to="/getAllBooks" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                                 Libros
                                             </NavLink>
-                                            <NavLink to="/getAllAuthors" className="navbar-item" activeClassName="is-active">
+                                            <NavLink to="/getAllAuthors" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                                 Autores
                                             </NavLink>
-                                            <NavLink to="/getAllLanguages" className="navbar-item" activeClassName="is-active">
+                                            <NavLink to="/getAllLanguages" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                                 Idiomas
                                             </NavLink>
-                                            <NavLink to="/getAllEditorials" className="navbar-item" activeClassName="is-active">
+                                            <NavLink to="/getAllEditorials" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                                 Editoriales
                                             </NavLink>
-                                            <NavLink to="/getAllGenders" className="navbar-item" activeClassName="is-active">
+                                            <NavLink to="/getAllGenders" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                                 Generos
                                             </NavLink>
-                                            <NavLink to="/getAllUsers" className="navbar-item" activeClassName="is-active">
+                                            <NavLink to="/getAllUsers" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                                 Usuarios
                                             </NavLink>
                                         </React.Fragment>
@@ -86,10 +87,10 @@ const Navbar = () => {
                                 </div>
                                 :
                                 <div className="navbar-end">
-                                    <NavLink to="/login" className="navbar-item" activeClassName="is-active">
+                                    <NavLink to="/login" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                         Iniciar sesión
                                     </NavLink>
-                                    <NavLink to="/register" className="navbar-item" activeClassName="is-active">
+                                    <NavLink to="/register" className="navbar-item" activeClassName="is-active" onClick={_toggleMobileMenu}>
                                         Registro
                                     </NavLink>
                                 </div>
