@@ -1,6 +1,7 @@
 {
   "name": "react-mssql",
   "main": "index.js",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
