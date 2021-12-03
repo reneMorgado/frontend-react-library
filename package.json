@@ -1,7 +1,7 @@
 {
   "name": "react-mssql",
   "main": "index.js",
-  "homepage": ".",
+  "homepage": "https://renemorgado.netlify.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
