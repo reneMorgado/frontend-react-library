@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Route, BrowserRouter as Router, Switch as Routes, Redirect } from 'react-router-dom';
+import { Route, HashRouter as Router, Switch as Routes, Redirect } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { userContext } from './context/userContext';
 import AllRents from './pages/AllRents';
