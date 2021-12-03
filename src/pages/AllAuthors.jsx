@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react'
-import { useEffect } from 'react/cjs/react.development'
+import React, { useContext, useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
 import AuthorAdminCard from '../components/AuthorAdminCard'
 import { api } from '../config'

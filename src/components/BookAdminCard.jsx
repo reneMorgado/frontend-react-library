@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react/cjs/react.development'
 import Swal from 'sweetalert2'
 import { api } from '../config'
 import { userContext } from '../context/userContext'

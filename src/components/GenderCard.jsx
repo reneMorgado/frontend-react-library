@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useContext } from 'react/cjs/react.development'
+import React, { useState, useContext } from 'react'
 import Swal from 'sweetalert2'
 import { api } from '../config'
 import { userContext } from '../context/userContext'
