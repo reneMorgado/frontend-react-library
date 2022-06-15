@@ -1,23 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Swal from 'sweetalert2'
-import RentCard from '../components/RentCard'
 import { api } from '../config'
-import { userContext } from '../context/userContext'
+import Swal from 'sweetalert2'
 
-const MyRents = () => {
-
-    const [rents, setRents] = useState([])
-
-    const { userId, token, setIsAuth, setIsAdmin, setToken, setUserId } = useContext(userContext)
-
-    useEffect(() => {
-        _getRentsRequest()
-        // eslint-disable-next-line
-    }, [])
-
-    const _getRentsRequest = async () => {
+/**
+ * @class Rents Data manager para hacer las peticiones y manejar errores en la api de las rentas
+ */
+class Rents {
+    /**
+     * @function getRentsByUser - Peticion para obtener las rentas de un usuario
+     * @param { String } token - token necesario para realizar las peticiones
+     * @param { Number } id - id del usuario para obtener rentas
+     * @returns { Object } response - respuesta de la api
+     */
+    async getRentsByUser (token, id) {
         try {
-            let request = await fetch(`${api}/library/getRentsByUser/${userId}`, {
+            let request = await fetch(`${api}/library/getRentsByUser/${id}`, {
                 method: 'GET',
                 mode: 'cors',
                 headers: {
@@ -27,13 +23,9 @@ const MyRents = () => {
             })
             const response = await request.json()
             if (await response.success) {
-                setRents(response.items)
+                return response.items
             } else {
                 if (response.error) {
-                    setIsAuth(false)
-                    setIsAdmin(false)
-                    setToken('')
-                    setUserId('')
                     Swal.fire({
                         icon: 'error',
                         title: 'La sesión ha expirado',
@@ -46,13 +38,26 @@ const MyRents = () => {
                         text: 'Error de servidor',
                     })
                 }
+                return false
             }
         } catch (error) {
-
+            Swal.fire({
+                icon: 'error',
+                title: 'Algo salió mal',
+                text: 'Error de servidor',
+            })
+            return false
         }
     }
 
-    const _returnBookRequest = async(renta, libro) => {
+    /**
+     * @function deleteRent - Peticion para eliminar una renta de un usuario
+     * @param { String } token - token necesario para realizar las peticiones
+     * @param { Number } id - id de la renta
+     * @param { Number } id - id del libro
+     * @returns { Object } response - respuesta de la api
+     */
+    async deleteRent (token, renta, libro){
         try {
             const bookBody = {
                 libro
@@ -73,7 +78,6 @@ const MyRents = () => {
                     title: 'Exito!',
                     text: 'Se ha regresado el libro de manera satisfactoria',
                 })
-                _getRentsRequest()
             } else {
                 if (response.error) {
                     Swal.fire({
@@ -97,22 +101,6 @@ const MyRents = () => {
             })
         }
     }
-
-    return (
-        <div className="container is-max-desktop">
-            <h2 className="Catalog-Title title is-2 ">Mis rentas</h2>
-            <div className="is-flex is-flex-direction-row is-flex-wrap-wrap">
-                {rents.length > 0 ? 
-                    rents.map((rent)=>(<RentCard key={Math.random()} rent={rent} _returnBookRequest={_returnBookRequest}/>))
-                :
-                    <div className="notification is-danger">
-                        No tienes rentas registradas!
-                    </div>   
-            }
-            </div>
-            
-         </div>
-    )
 }
 
-export default MyRents
+export default new Rents()
