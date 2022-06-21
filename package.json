@@ -1,5 +1,5 @@
 {
-  "name": "react-mssql",
+  "name": "react-mssql", 
   "version": "0.1.0",
   "private": true,
   "dependencies": {
