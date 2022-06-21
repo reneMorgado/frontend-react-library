@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 import { api } from '../config'
 import { userContext } from '../context/userContext'
 
-const AuthorAdminCard = ({ author, _getAuthorsRequest }) => {
+const AuthorAdminCard = ({ author, _getAuthorsRequest }) => { 
 
     const { token } = useContext(userContext)
 

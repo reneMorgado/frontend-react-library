@@ -5,7 +5,7 @@ import { userContext } from '../context/userContext'
 
 
 const UserAdminCard = ({user, _getUsersRequest}) => {
-
+ 
     const { userId, token, setIsAuth, setIsAdmin, setToken, setUserId } = useContext(userContext)
 
     const [deleteModal, setDeleteModal] = useState(false)

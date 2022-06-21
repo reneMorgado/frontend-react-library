@@ -6,7 +6,7 @@ import { api } from '../config'
 import { userContext } from '../context/userContext'
 
 
-const BookAdminCard = ({ book, _getBooksRequest }) => {
+const BookAdminCard = ({ book, _getBooksRequest }) => { 
 
     const [author, setAuthor] = useState('')
     const [editorial, setEditorial] = useState('')

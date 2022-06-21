@@ -5,7 +5,7 @@ import { api } from '../config'
 import { userContext } from '../context/userContext'
 import BookCard from './BookCard'
 
-const AuthorCard = ({ author }) => {
+const AuthorCard = ({ author }) => { 
 
     const [showModal, setShowModal] = useState(false)
     const [books, setBooks] = useState([])

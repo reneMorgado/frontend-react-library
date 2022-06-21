@@ -11,7 +11,7 @@ const LanguageAdminCard = ({language, _getLanguagesRequest}) => {
     const [deleteModal, setDeleteModal] = useState(false)
 
     const [languageName, setLanguageName] = useState(language.Idioma)
-
+ 
     const _toggleEditModal = () => {
         setEditModal(!editModal)
     }

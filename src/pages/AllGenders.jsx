@@ -23,7 +23,7 @@ const AllGenders = () => {
     const _getGendersRequest = async () => {
         try {
             let request = await fetch(`${api}/library/getGenders`, {
-                method: 'GET',
+                method: 'GET', 
                 mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json',

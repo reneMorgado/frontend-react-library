@@ -23,7 +23,7 @@ const AllRents = () => {
                 headers: {
                     'Content-Type': 'application/json',
                     'access-token': token
-                }
+                } 
             })
             let response = await request.json()
             if (response.success) {

@@ -19,7 +19,7 @@ const AllAuthors = () => {
 
     const { token, setIsAdmin, setIsAuth, setToken, setUserId } = useContext(userContext)
 
-    useEffect(()=>{
+    useEffect(()=>{ 
         _getAuthorsRequest()
         // eslint-disable-next-line
     },[])

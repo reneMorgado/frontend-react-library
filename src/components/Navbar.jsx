@@ -6,7 +6,7 @@ const Navbar = () => {
 
     const { isAuth, isAdmin, setIsAuth, setIsAdmin, setToken, setUserId } = useContext(userContext)
     const history = useHistory()
-
+ 
     const _closeSession = () => {
         setIsAdmin(false)
         setIsAuth(false)

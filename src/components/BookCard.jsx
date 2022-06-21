@@ -6,7 +6,7 @@ import { api } from '../config'
 import { userContext } from '../context/userContext'
 
 const BookCard = ({ book }) => {
-
+ 
     const [author, setAuthor] = useState('')
     const [editorial, setEditorial] = useState('')
     const [gender, setGender] = useState('')

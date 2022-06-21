@@ -21,7 +21,7 @@ const AllEditorials = () => {
     const _getEditorialsRequest = async () => {
         try {
             let request = await fetch(`${api}/library/getEditorials`, {
-                method: 'GET',
+                method: 'GET', 
                 mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ const GenderAdminCard = ({gender, _getGendersRequest}) => {
 
     const [editModal, setEditModal] = useState(false)
     const [deleteModal, setDeleteModal] = useState(false)
-
+ 
     const [genderName, setGenderName] = useState(gender.Genero)
     const [genderImage, setGenderImage] = useState(gender.Imagen_Genero)
 

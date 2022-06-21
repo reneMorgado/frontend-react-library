@@ -23,7 +23,7 @@ const AllLanguages = () => {
             let request = await fetch(`${api}/library/getLanguages`, {
                 method: 'GET',
                 mode: 'cors',
-                headers: {
+                headers: { 
                     'Content-Type': 'application/json',
                     'access-token': token
                 }

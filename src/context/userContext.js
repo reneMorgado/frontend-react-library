@@ -8,7 +8,7 @@ const UserContextProvider = ({children}) => {
     const [isAuth, setIsAuth] = useState(false)
     const [isAdmin, setIsAdmin] = useState(false)
     const [userId, setUserId] = useState('')
-
+ 
     return (
         <userContext.Provider value={{token, setToken, isAuth, setIsAuth, isAdmin, setIsAdmin, userId, setUserId}}>
             {children}

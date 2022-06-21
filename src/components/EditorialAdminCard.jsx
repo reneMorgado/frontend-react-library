@@ -8,7 +8,7 @@ const EditorialAdminCard = ({editorial, _getEditorialsRequest}) => {
 
     const [editModal, setEditModal] = useState(false)
     const [deleteModal, setDeleteModal] = useState(false)
-
+ 
     const [editorialName, setEditorialName] = useState(editorial.Editorial)
 
     const _toggleEditModal = () => {

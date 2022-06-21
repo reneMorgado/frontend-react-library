@@ -19,7 +19,7 @@ const AllBooks = () => {
 
     const [title, setTitle] = useState('')
     const [desc, setDesc] = useState('')
-    const [year, setYear] = useState('')
+    const [year, setYear] = useState('') 
     const [month, setMonth] = useState('')
     const [day, setDay] = useState('')
     const [image, setImage] = useState('')

@@ -24,7 +24,7 @@ const Rent = () => {
     useEffect(() => {
         _loadData()
         // eslint-disable-next-line
-    }, [])
+    }, []) 
 
     const _loadData = async () => {
         await _getBookByIdRequest()

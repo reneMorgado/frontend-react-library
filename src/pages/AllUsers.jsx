@@ -23,7 +23,7 @@ const AllUsers = () => {
                 headers: {
                     'Content-Type': 'application/json',
                     'access-token': token
-                }
+                } 
             })
             let response = await request.json()
             if (await response.success) {
